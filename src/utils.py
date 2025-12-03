@@ -3,6 +3,17 @@ import pandas as pd
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error, r2_score
 
+runtimes= {}
+
+def add_runtime(label, duration):
+    # overwrites previous value for the same label
+    runtimes[label] = duration
+
+def print_runtimes():
+    print("\n--- Runtime summary ---")
+    for label, dur in runtimes.items():
+        print(f"{label}: {dur:.4f} s")
+
 def evaluate_model(model, X_train, y_train, X_test, y_test, n_splits=5, seed=123):
     """
     1. Runs K-Fold CV on X_train.
