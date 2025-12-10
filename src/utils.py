@@ -75,7 +75,6 @@ def print_results(model_name, results):
     Helper function to print results
     """
     print(f"--- {model_name} ---")
-    print(f"  Runtime:              {results['Runtime_Seconds']:.4f} seconds")
     print(f"  CV MSE (Error):    {results['CV_MSE']:.4f}")
     print(f"  CV R² (Stability):    {results['CV_R2']:.4f}")
     print(f"  Test MSE (Error):     {results['Test_MSE']:.4f}")
